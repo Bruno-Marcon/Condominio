@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/css/login/style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'accounts/img/male4.png' %}" class="img-responsive" alt="...">
+        <form method="POST" class="formLogin"> 
+            {% csrf_token%}
+            <input type="hidden" name="next" value="{{next}}">
+            <div class="alignIcons">
+                <img src="{% static 'accounts/img/o-email.png' %}" alt="" class="icon">
+                <input type="email" name="email" class="inputLogin" placeholder="email@email.com">
+            </div>
+            <div class="alignIcons">
+                <img src="{% static 'accounts/img/chave.png' %}" alt="" class="icon">
+                <input type="password" name="password" class="inputLogin" placeholder="xxxxxxxxxxx">
+            </div>
+            <button type="submit" class="buttonLogin">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
