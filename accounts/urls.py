@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
-from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('register/',views.SignUp.as_view(), name="signUp"), 
+    path('login/', auth_views.LoginView.as_view(
+        template_name = 'Condominio/accounts/templates/login/login.html'
+        ), name="login"),
 ]

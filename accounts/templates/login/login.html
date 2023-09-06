@@ -10,18 +10,18 @@
 <body>
     <div class="container">
         <img src="{% static 'accounts/img/male4.png' %}" class="img-responsive" alt="...">
-        <form method="POST" class="formLogin"> 
+        <form action="{% url 'login' %}" method="POST" class="formLogin"> 
             {% csrf_token%}
-            <input type="hidden" name="next" value="{{next}}">
             <div class="alignIcons">
-                <img src="{% static 'accounts/img/o-email.png' %}" alt="" class="icon">
-                <input type="email" name="email" class="inputLogin" placeholder="email@email.com">
+                <img src="{% static 'accounts/img/avatar-de-perfil.png' %}" alt="" class="icon">
+                <input type="text" name="name" class="inputLogin" placeholder="Nome de usuário">
             </div>
             <div class="alignIcons">
                 <img src="{% static 'accounts/img/chave.png' %}" alt="" class="icon">
                 <input type="password" name="password" class="inputLogin" placeholder="xxxxxxxxxxx">
             </div>
-            <button type="submit" class="buttonLogin">Entrar</button>
+            <button type="submit" class="buttonLogin" value="Login">Entrar</button>
+            <input type="hidden" name="next" value="{{ next }}">
         </form>
     </div>
 </body>
